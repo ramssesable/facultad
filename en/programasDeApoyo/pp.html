@@ -4,17 +4,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UABC FCA</title>
-    <link rel='shortcut icon' href='../cimaico.png' type='image/png'>
-    <link rel="stylesheet" href="../resources/css/foundation.css" />
-    <link rel="stylesheet" href="../resources/css/normalize.css">
-    <link rel="stylesheet" href="../resources/css/footer.css">
-    <script src="../resources/js/vendor/modernizr.js"></script>
-    <script src="../resources/js/footer.js"></script>
+    <link rel='shortcut icon' href='../../cimaico.png' type='image/png'>
+    <link rel="stylesheet" href="../../resources/css/foundation.css" />
+    <link rel="stylesheet" href="../../resources/css/normalize.css">
+    <link rel="stylesheet" href="../../resources/css/footer.css">
+    <script src="../../resources/js/vendor/modernizr.js"></script>
+    <script src="../../resources/js/footer.js"></script>
     <!--=================== Imports del Reproductor de Radio ===================-->
-    <script src="../mediaelement/build/jquery.js"></script>
-    <script src="../mediaelement/build/mediaelement-and-player.min.js"></script>
-    <script src="../mediaelement/testforfiles.js"></script>
-    <link rel="stylesheet" href="../mediaelement/build/mediaelementplayer.min.css" />
+    <script src="../../mediaelement/build/jquery.js"></script>
+    <script src="../../mediaelement/build/mediaelement-and-player.min.js"></script>
+    <script src="../../mediaelement/testforfiles.js"></script>
+    <link rel="stylesheet" href="../../mediaelement/build/mediaelementplayer.min.css" />
     <!-- ================ Fin de Imports del Reproductor de Radio ==============-->
     <style type="text/css">
         .espacioCompleto{
@@ -26,7 +26,7 @@
   <body>
 
 <div class="row"> <!--Se Abre Div Principal-->
-  <img src="../resources/img/logo.png"/>
+  <img src="../../resources/img/logo.png"/>
 
 <!--============================================================================-->
 <!--===================== Menu Top Bar Para Pantallas Grandes ==================-->
@@ -363,26 +363,24 @@
 <!--=== Termina sitio / Se Agregan Scripts de elementos especiales =============-->
 <!--============================================================================-->
 
-   <script src="../resources/js/vendor/jquery.js"></script>
-   <script src="../resources/js/foundation.min.js"></script>
-   <script src="../resources/js/foundation/foundation.interchange.js"></script>
-<script type="text/javascript">
-    $(document).foundation({
-
-    });
-    $(document).ready(function () {
-      // Carga footer
-      $("#footer").load("../footer.html");
-    });
-</script>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.0";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+    <script src="../../resources/js/vendor/jquery.js"></script>
+    <script src="../../resources/js/foundation.min.js"></script>
+    <script src="../../resources/js/foundation/foundation.interchange.js"></script>
+    <script type="text/javascript">
+      $(document).foundation();
+      $(document).ready(function () {
+        // Carga footer
+        $("#footer").load("../footer.html");
+      });
+    </script>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 
   </body>
 </html>
