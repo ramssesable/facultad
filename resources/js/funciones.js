@@ -4,7 +4,7 @@ function cargarMenuAlumnos () {
 	var $_renglonTTemp	= $("<b/>").html("Men&uacute; Alumnos:").appendTo($_renglonT);
 	$_renglonT.appendTo($_lista);
 	var $_renglonD		= $("<dd/>").addClass("active");
-	var $_renglonDTemp	= $("<a/>").attr("href","cursoPropedeutico.html").html("Aspirantes").appendTo($_renglonD);
+	var $_renglonDTemp	= $("<a/>").attr("href","http://fca.mxl.uabc.mx/facultad/cursoPropedeutico.html").html("Aspirantes").appendTo($_renglonD);
 	$_renglonD.appendTo($_lista);
 	var $_renglonD		= $("<dd/>");
 	var $_renglonDTemp	= $("<a/>").attr("href","http://alumnos.uabc.mx").html("Portal Alumnos").appendTo($_renglonD);
