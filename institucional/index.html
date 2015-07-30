@@ -10,12 +10,8 @@
     <link rel="stylesheet" href="../resources/css/footer.css">
     <script src="../resources/js/vendor/modernizr.js"></script>
     <script src="../resources/js/footer.js"></script>
-    <!--=================== Imports del Reproductor de Radio ===================-->
+    <script src="../resources/js/funciones.js"></script>
     <script src="../mediaelement/build/jquery.js"></script>
-    <script src="../mediaelement/build/mediaelement-and-player.min.js"></script>
-    <script src="../mediaelement/testforfiles.js"></script>
-    <link rel="stylesheet" href="../mediaelement/build/mediaelementplayer.min.css" />
-    <!-- ================ Fin de Imports del Reproductor de Radio ==============-->
   </head>
   <body>
 
@@ -76,7 +72,7 @@
             <li><a href="http://www.uabc-fca.com/posgrado/">Posgrado</a></li>
             <li><a href="../academico/educacion.html">Educaci&oacute;n Continua</a></li>
             <li><label>Men&uacute; de Alumnos</label></li>
-            <li><a href="http://admisiones.uabc.mx/">Aspirantes</a></li>
+            <li><a href="../cursoPropedeutico.hmtl">Aspirantes</a></li>
             <li><a href="http://alumnos.uabc.mx">Portal Alumnos</a></li>
             <li><a href="http://reinscripciones.uabc.mx">Reinscripciones</a></li>
             <li><a href="http://148.231.9.12/wd120awp.exe/connect/siss2009r2">Servicios Sociales</a></li>
@@ -117,17 +113,7 @@
 <!--============================== MENU ALUMNOS ================================-->
 <!--============================================================================-->
 
-<dl class="sub-nav show-for-large-up">
-  <dt><b>Men&uacute; Alumnos:</b></dt>
-  <dd class="active"><a href="http://admisiones.uabc.mx/">Aspirantes</a></dd>
-  <dd><a href="http://alumnos.uabc.mx">Portal Alumnos</a></dd>
-  <dd><a href="http://reinscripciones.uabc.mx">Reinscripciones</a></dd>
-  <dd><a href="http://148.231.9.12/wd120awp.exe/connect/siss2009r2">Servicios Sociales</a></dd>
-  <dd><a href="https://pagos.uabc.mx/">Pago Web</a></dd>
-  <dd><a href="http://correo.uabc.edu.mx">Correo UABC</a></dd>
-</dl>
-
-
+<div id="menuAlumnos"></div><!--  Esta seccion se carga con la funcion cargarMenuAlumnos que se encuentra resourses/js/funciones.js -->
 
 <!--============================================================================-->
 <!--================= Contenido ======================-->
@@ -145,8 +131,8 @@
       <li><a href="administracion.html">> Administraci&oacute;n</a></li>
       <li><a href="ORGANIGRAMA.pdf">> Organigrama</a></li>
       <li><a href="manualfunciones.html">> Manual de funciones</a></li>
-      <li><a href="#">> Plan de Desarrollo Institucional<br> &nbsp;&nbsp;&nbsp;2015 - 2019</a></li>
-      <li><a href="#">> Plan de Desarrollo de la FCA<br>  &nbsp;&nbsp;&nbsp;2015 - 2019</a></li>
+      <li class="resaltar"><a href="pdi.html">> <strong class="resaltar2">Plan de Desarrollo Institucional</strong><br> <center class="resaltar2">2015 - 2019</center></a></li>
+      <li><a href="#">> Plan de Desarrollo de la FCA<br>  <center>2015 - 2019</center></a></li>
       <li><a href="http://www.uabc.mx/formacionbasica/modeloedu.htm">> Modelo Educativo</a></li>
       <li><a href="curriculums/">> Curr&iacute;culums Directivos</a></li>
     </ul>
@@ -236,10 +222,10 @@ $('audio,video').mediaelementplayer();
         bullets: false
           }
       });
-
       $(document).ready(function () {
         // Carga footer
         $("#footer").load("../footer.html");
+        cargarMenuAlumnos();
       });
 
       $('a.reveal-link').trigger('click');

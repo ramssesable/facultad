@@ -3367,7 +3367,7 @@ ul.pagination {
       font-size: 0.875rem;
       font-weight: bold;
       text-transform: uppercase; }
-      
+
 .accordion {
   margin-bottom: 0; }
   .accordion:before, .accordion:after {
@@ -5704,7 +5704,7 @@ div.switch.round {
 
 
 /* ====================================================================== */
-/* ==================== Banner_Amarillo y otros ========================= */
+/* ========================= Banner_Amarillo ============================ */
 /* ====================================================================== */
 
   div.amarisho{
@@ -5790,9 +5790,16 @@ div.switch.round {
         .accordion2 .accordion2-navigation > .content.active, .accordion2 dd > .content.active {
           display: block;
           background: #EDEDED; }
+          
+  .resaltar {
+    background-color  : rgba(255, 171, 3, 0.86);
+  }
+  .resaltar2 {
+    color             : black;
+  }
 
 /* ====================================================================== */
-/* ================== Banner_Amarillo y otros =========================== */
+/* ========================= Banner_Amarillo ============================ */
 /* ====================================================================== */
 
 /* small displays */
