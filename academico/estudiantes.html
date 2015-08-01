@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../resources/css/footer.css">
     <script src="../resources/js/vendor/modernizr.js"></script>
     <script src="../resources/js/footer.js"></script>
+    <script src="../resources/js/funciones.js"></script>
     <!--=================== Imports del Reproductor de Radio ===================-->
     <script src="../mediaelement/build/jquery.js"></script>
     <script src="../mediaelement/build/mediaelement-and-player.min.js"></script>
@@ -119,17 +120,7 @@
 <!--============================== MENU ALUMNOS ================================-->
 <!--============================================================================-->
 
-<dl class="sub-nav show-for-large-up">
-  <dt><b>Men&uacute; Alumnos:</b></dt>
-  <dd class="active"><a href="http://admisiones.uabc.mx/">Aspirantes</a></dd>
-  <dd><a href="http://alumnos.uabc.mx">Portal Alumnos</a></dd>
-  <dd><a href="http://reinscripciones.uabc.mx">Reinscripciones</a></dd>
-  <dd><a href="http://148.231.9.12/wd120awp.exe/connect/siss2009r2">Servicios Sociales</a></dd>
-  <dd><a href="https://pagos.uabc.mx/">Pago Web</a></dd>
-  <dd><a href="http://correo.uabc.edu.mx">Correo UABC</a></dd>
-</dl>
-
-
+<div id="menuAlumnos"></div><!--  Esta seccion se carga con la funcion cargarMenuAlumnos que se encuentra resourses/js/funciones.js -->
 
 <!--============================================================================-->
 <!--================= Contenido ======================-->
@@ -240,14 +231,14 @@
 <!--============================ Contenido Acordeon ==========================-->
               <li>
                 <strong>Horarios de clases 2015-1:</strong>
-                <a href="https://dl.dropboxusercontent.com/u/86599928/Horarios/2015-1/LI.pdf">- Lic. en Inform&aacute;tica </a>
-                <a href="https://dl.dropboxusercontent.com/u/86599928/Horarios/2015-1/LAE.pdf">- Lic. en Administraci&oacute;n</a>
-                <a href="https://dl.dropboxusercontent.com/u/86599928/Horarios/2015-1/LC.pdf">- Lic. en Contadur&iacute;a</a>
-                <a href="https://dl.dropboxusercontent.com/u/86599928/Horarios/2015-1/MKT.pdf">- Lic. en Mercadot&eacute;cnia</a>
-                <a href="https://dl.dropboxusercontent.com/u/86599928/Horarios/2015-1/TURISMO.pdf">- Lic. en Gesti&oacute;n Turistica</a>
-                <a href="https://dl.dropboxusercontent.com/u/86599928/Horarios/2015-1/LNI.pdf">- Lic. en Negocios I</a>
-                <a href="https://dl.dropboxusercontent.com/u/86599928/Horarios/2015-1/TC.pdf">- Tronco Com&uacute;n Cs. Admvas</a>
-                <a href="https://dl.dropboxusercontent.com/u/86599928/Horarios/2015-1/tc_2do.pdf">- Tronco Com&uacute;n Cs. Admvas 2do.</a>
+                <a href="https://dl.dropboxusercontent.com/u/86599928/Horarios/2015-2/LI.pdf">- Lic. en Inform&aacute;tica </a>
+                <a href="https://dl.dropboxusercontent.com/u/86599928/Horarios/2015-2/LAE.pdf">- Lic. en Administraci&oacute;n</a>
+                <a href="https://dl.dropboxusercontent.com/u/86599928/Horarios/2015-2/LC.pdf">- Lic. en Contadur&iacute;a</a>
+                <a href="https://dl.dropboxusercontent.com/u/86599928/Horarios/2015-2/MKT.pdf">- Lic. en Mercadot&eacute;cnia</a>
+                <a href="https://dl.dropboxusercontent.com/u/86599928/Horarios/2015-2/GT.pdf">- Lic. en Gesti&oacute;n Turistica</a>
+                <a href="https://dl.dropboxusercontent.com/u/86599928/Horarios/2015-2/LNI.pdf">- Lic. en Negocios I</a>
+                <a href="https://dl.dropboxusercontent.com/u/86599928/Horarios/2015-2/TC+1ER.pdf">- Tronco Com&uacute;n Cs. Admvas</a>
+                <a href="https://dl.dropboxusercontent.com/u/86599928/Horarios/2015-2/TC+2DO.pdf">- Tronco Com&uacute;n Cs. Admvas 2do.</a>
               </li>
 <!--============================ TerminaContenido Acordeon ===================-->         
             </div>
@@ -342,7 +333,8 @@ $('audio,video').mediaelementplayer();
       });
       $(document).ready(function(){
         // Carga footer
-        $("#footer").load("../footer.html")
+        $("#footer").load("../footer.html");
+        cargarMenuAlumnos();
       });
       $('a.reveal-link').trigger('click');
     $('a.close-reveal-modal').trigger('click');

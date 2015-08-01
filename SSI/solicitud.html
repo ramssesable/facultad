@@ -1,0 +1,52 @@
+<html>
+  <head>
+  	<link rel="stylesheet" href="../resources/css/foundation.css" />
+  	<link rel="stylesheet" href="../resources/css/foundation.min.css" />
+  	<link rel="stylesheet" href="../resources/css/normalize.css" />
+  	<script src="../resources/js/vendor/jquery.js"></script>
+    <style type="text/css">
+      textarea {
+        resize  : none;
+        height  : 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <div clasS="row"> <!--  Inicia pagina  -->
+      <form id="forma" action="enviarEmail.php" method="post">
+        <hr/>
+        <h2>Solicitud</h2>
+          <label>Dependencia
+            <select id="dependencia" name="dependencia" required>
+              <option>Seleccionar...</option>
+              <option value="FCA">Facultad de Ciencias Administrativas</option>
+            </select>
+          </label>
+          <label>Asunto
+            <select id="asunto" name="asunto" required>
+              <option>Seleccionar...</option>
+              <option value="CONS SOFTWARE">Consultor&iacute;a software</option>
+              <option value="SOPORTE">Soporte</option>
+              <option value="CORREO">Correo</option>
+              <option value="TELEFONIA">Telefon&iacute;a</option>
+              <option value="INTERNET">Internet</option>
+              <option value="OTROS">Otros</option>
+            </select>
+          </label>
+          <label>Descripci&oacute;n
+            <textarea id="descripcion" name="descripcion" required></textarea>
+          </label>
+        <hr/>
+        <h2>Datos del solicitante</h2>
+          <label>Correo Electronico
+            <input type="text" id="correo" name="correo" >
+          </label>
+          <label>Tel&eacute;fono / Extencion
+            <input type="text" id="telefono" name="telefono" required>
+          </label>
+          <input type="submit" class="button success round" value="Enviar">
+          <input type="reset" class="button alert round" value="Limpiar campos">
+      </form>
+    </div> <!-- Termina página -->
+  </body>
+</html>
