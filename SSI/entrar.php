@@ -1,22 +1,28 @@
 <?php
+	session_start();
 	include ('conexion2.php');
 
 //---------------------------------------------------------------------------------------------------------------------------------------------
 
-	$usuario = $_POST['usuario'];
+	$clave = $_POST['clave'];
+	//$clave = 11111;
 
-	$sql 		= 'SELECT * FROM usuarios WHERE no_usuario='.$usuario.'';
-	$result 	= mysql_query($sql);
-	$arreglo 	= mysql_fetch_array($result);
+//---------------------------------------------------------------------------------------------------------------------------------------------
 
-	//$result = $_SESSION['app']->db->array_result($sql);
-    //echo $_SESSION['app']->dd_json_result($result);
+	$query 		= 'SELECT usuario_id,nombre FROM usuarios WHERE clave='.$clave.'';
+	$return 	= mysql_query($query);
+	$arreglo 	= mysql_fetch_array($return);
+
 
 	if ($arreglo > 0) {
-		echo "Se hizo la machaca<br>";
-		echo $arreglo[0];
-		echo $arreglo[1];
+		$_SESSION['usuario'] = $arreglo[0];
+		$_SESSION['nombre'] = "'".$arreglo[1]."'";
+		$result = array("result" => 1);
+		header('Content-Type:text/json');
+		echo json_encode($result);
 	}else {
-		echo "Le falto mas caldo";
+		$result = array("result" => 0);
+		header('Content-Type:text/json');
+		echo json_encode($result);
 	}
 ?>

@@ -1,21 +1,54 @@
+<!DOCTYPE html>
 <html>
   <head>
-  	<title>Solicitud de servios inform&aacute;ticos FCA</title>
+    <meta charset="UTF-8">
+  	<title>SSI FCA</title>
+    <meta name="description" content="Login - Solicitud de servicios informáticos Facultad de Ciencias Administrativas"/>
+    <meta name="author" content="Martin Ramsses Gomez Rodriguez"/>
     <link rel="stylesheet" href="../resources/css/foundation.css" />
     <link rel="stylesheet" href="../resources/css/foundation.min.css" />
   	<link rel="stylesheet" href="../resources/css/normalize.css" />
-  	<script src="../resources/js/vendor/jquery.js"></script>
+    <script src="../resources/js/vendor/jquery.js"></script>
+    <script src="../resources/js/vendor/jquery.mask.js"></script>
+    <script src="../resources/js/vendor/jquery.mask.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $("#clave").mask("99999");
+      });
+      function buscarEmpleado() {
+        $.ajax({
+          type: 'POST',
+          dataType: 'json',
+          url: 'entrar.php',
+          async: true,
+          cache: false,
+          data: { clave : $("#clave").val().trim() }
+        }).done( function (data) {
+          if(data.result == 1) {
+            document.location.href="solicitud.html";
+          }else {
+            alert("Empleado inexistente");
+          }
+        });
+        return false;
+      }
+    </script>
   	<style type="text/css"></style>
   </head>
   <body>
-  	<form name="entrada" method="POST" action="entrar.php">
-  	  Usario: <input type="text" id="usuario" name="usuario">
-  	  <input type="submit" value="entrar">
+  	<form id="login" method="POST" onsubmit="return buscarEmpleado()" >
+      <div class="row">
+        <div class="small-1 columns">&nbsp;</div>
+        <div class="small-10 medium-6 columns panel">
+          Usario: <input type="text" id="clave" name="clave" placeholder="Proporcione n&uacute;mero de empleado" required>
+          <input type="submit" class="button success" value="Entrar">
+        </div>
+        <div class="small-1 columns"></div>
+      </div>
   	</form>
   </body>
-  <script type="text/javascript">
-  	$(document).ready(function() {
+  <script type="text/javascript" language="javascript">
 
-  	});
+    
   </script>
 </html>

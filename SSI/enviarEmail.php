@@ -19,6 +19,7 @@
 
   // Ahora se envía el e-mail usando la función mail() de PHP
   $headers = 'From: '.$correo."\r\n".
+  'Reply-To: '.$correo."\r\n".
   'X-Mailer: PHP/' . phpversion();
   @mail($email_to, $email_subject, utf8_decode($email_message), $headers);
 
