@@ -1,12 +1,18 @@
 <html>
   <head>
-  	<link rel="stylesheet" href="../resources/css/foundation.css" />
-  	<link rel="stylesheet" href="../resources/css/foundation.min.css" />
-  	<link rel="stylesheet" href="../resources/css/normalize.css" />
-  	<script src="../resources/js/vendor/jquery.js"></script>
+  	<meta charset="UTF-8">
+    <title>Solicitudes - SSI</title>
+    <meta name="description" content="Solicitud de servicios informáticos Facultad de Ciencias Administrativas"/>
+    <meta name="author" content="Martin Ramsses Gomez Rodriguez"/>
+    <link rel="stylesheet" href="../resources/css/foundation.css" />
+    <link rel="stylesheet" href="../resources/css/foundation.min.css" />
+    <link rel="stylesheet" href="../resources/css/normalize.css" />
+    <script src="../resources/js/vendor/jquery.js"></script>
+    <script src="js/myFunctions.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
-        
+        verificarSession();
+        buscarSolicitudes();
       });
       function buscarSolicitudes() {
         $.ajax({

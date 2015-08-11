@@ -9,7 +9,7 @@
 
 //---------------------------------------------------------------------------------------------------------------------------------------------
 
-	$query 		= 'SELECT usuario_id,nombre FROM usuarios WHERE clave='.$clave.'';
+	$query 		= 'SELECT clave,nombre FROM usuarios WHERE clave='.$clave.'';
 	$return 	= mysql_query($query);
 	$arreglo 	= mysql_fetch_array($return);
 

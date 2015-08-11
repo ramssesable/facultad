@@ -14,7 +14,22 @@
     <script type="text/javascript">
       $(document).ready(function() {
         $("#clave").mask("99999");
+        verificarSession();
       });
+      function verificarSession() {
+        $.ajax({
+          type: 'POST',
+          dataType: 'json',
+          url: 'session.php',
+          async: false,
+          cache: false,
+          //data: {args}
+        }).done( function (data) {
+          if( data.result == 1 ) {
+            document.location.href="main.html";
+          }
+        });
+      }
       function buscarEmpleado() {
         $.ajax({
           type: 'POST',
@@ -25,7 +40,7 @@
           data: { clave : $("#clave").val().trim() }
         }).done( function (data) {
           if(data.result == 1) {
-            document.location.href="solicitud.html";
+            document.location.href="main.html";
           }else {
             alert("Empleado inexistente");
           }

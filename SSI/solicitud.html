@@ -1,13 +1,15 @@
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>SSI FCA</title>
-    <meta name="description" content="Solicitudes - Solicitud de servicios informáticos Facultad de Ciencias Administrativas"/>
+    <title>Solicitudes - SSI</title>
+    <meta name="description" content="Solicitud de servicios informáticos Facultad de Ciencias Administrativas"/>
     <meta name="author" content="Martin Ramsses Gomez Rodriguez"/>
   	<link rel="stylesheet" href="../resources/css/foundation.css" />
   	<link rel="stylesheet" href="../resources/css/foundation.min.css" />
   	<link rel="stylesheet" href="../resources/css/normalize.css" />
   	<script src="../resources/js/vendor/jquery.js"></script>
+    <script src="js/myFunctions.js"></script>
     <style type="text/css">
       textarea {
         resize  : none;
@@ -16,6 +18,7 @@
     </style>
     <script type="text/javascript">
       $(document).ready(function() {
+        verificarSession();
       });
 
       function enviarSolicitud() {
@@ -39,7 +42,7 @@
             document.location.href="main.html";
           }else if ( data.result == 0 ) {
             alert("Se ha perdido su session\r\n\r\nEsta siendo redirigido al login");
-            //document.location.href="index.html";
+            document.location.href="../ssi";
           }else {
             alert("Hubo algun problema");
           }
@@ -78,10 +81,10 @@
         <hr/>
         <h2>Datos del solicitante</h2>
           <label>Correo Electronico
-            <input type="email" id="correo" name="correo" >
+            <input type="email" id="correo" name="correo" required>
           </label>
           <label>Tel&eacute;fono / Extencion
-            <input type="tel" id="telefono" name="telefono" required>
+            <input type="text" id="telefono" name="telefono" required>
           </label>
           <input type="submit" class="button success round" value="Enviar">
           <input type="reset" class="button alert round" value="Limpiar campos">

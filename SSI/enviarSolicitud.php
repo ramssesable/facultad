@@ -15,7 +15,7 @@
 //---------------------------------------------------------------------------------------------------------------------------------------------
 
       $query = "INSERT INTO solicitudes 
-      (usuario_id
+      (usuario
       ,correo
       ,telefono
       ,dependencia
@@ -26,12 +26,11 @@
     
       mysql_query($query) or die(mysql_error());
 
-      if(mysql_query($query)) {
-        $msj = array( "result" => 1 );
-      }
+      $msj = array( "result" => 1 );
     }else {
       $msj = array( "result" => 0 );
     }
   }
+  header('Content-Type:text/json');
   echo json_encode($msj);
 ?>
