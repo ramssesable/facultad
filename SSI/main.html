@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="UTF-8">
+  	<title>Principal SSI</title>
+    <meta name="description" content="P&aacute;gina principal - Solicitud de servicios informáticos Facultad de Ciencias Administrativas"/>
+    <meta name="author" content="Martin Ramsses Gomez Rodriguez"/>
+    <link rel="stylesheet" href="../resources/css/foundation.css" />
+    <link rel="stylesheet" href="../resources/css/foundation.min.css" />
+  	<link rel="stylesheet" href="../resources/css/normalize.css" />
+    <script src="../resources/js/vendor/jquery.js"></script>
+    <script src="../resources/js/vendor/jquery.mask.js"></script>
+    <script src="../resources/js/vendor/jquery.mask.min.js"></script>
+    <script src="js/myFunctions.js"></script>
+    <script type="text/javascript" languaje="javascript">
+    	$(document).ready(function() {
+    		verificarSession();
+    		$("#boton").click(cerrarSession);
+    	});
+    </script>
+  </head>
+  <body>
+  	<h2>Bienvenido</h2>
+  		<ul>
+  			<li><a href="solicitud.html">Ingresar Solicitud</a></li>
+  			<li><a href="">Ver solicitudes</a></li>
+  			<li><button class="alert" id="boton">Cerrar session</button></li>
+  		</ul>
+  </body>
+</html>

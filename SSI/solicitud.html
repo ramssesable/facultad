@@ -1,30 +1,72 @@
+<!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <title>Solicitudes - SSI</title>
+    <meta name="description" content="Solicitud de servicios informáticos Facultad de Ciencias Administrativas"/>
+    <meta name="author" content="Martin Ramsses Gomez Rodriguez"/>
   	<link rel="stylesheet" href="../resources/css/foundation.css" />
   	<link rel="stylesheet" href="../resources/css/foundation.min.css" />
   	<link rel="stylesheet" href="../resources/css/normalize.css" />
   	<script src="../resources/js/vendor/jquery.js"></script>
+    <script src="js/myFunctions.js"></script>
     <style type="text/css">
       textarea {
         resize  : none;
         height  : 150px;
       }
     </style>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        verificarSession();
+      });
+
+      function enviarSolicitud() {
+        $("#mensaje").html("");
+        $.ajax({
+          type: 'POST',
+          dataType: 'json',
+          url: 'enviarSolicitud.php',
+          async: false,
+          cache: false,
+          data: {
+             dependencia  :$("#dependencia").val().trim()
+            ,asunto       :$("#asunto").val().trim()
+            ,descripcion  :$("#descripcion").val().trim()
+            ,correo       :$("#correo").val().trim()
+            ,telefono     :$("#telefono").val().trim()
+          }
+        }).done( function (data) {
+          if( data.result == 1 ) {
+            alert("Su solicitud ha sido enviada");
+            document.location.href="main.html";
+          }else if ( data.result == 0 ) {
+            alert("Se ha perdido su session\r\n\r\nEsta siendo redirigido al login");
+            document.location.href="../ssi";
+          }else {
+            alert("Hubo algun problema");
+          }
+        });
+
+        return false;
+      }
+    </script>
   </head>
   <body>
+    <div id="msj"></div><h2><div id="mensaje"></div></h2>
     <div clasS="row"> <!--  Inicia pagina  -->
-      <form id="forma" action="enviarEmail.php" method="post">
+      <form id="forma" onsubmit="return enviarSolicitud()">
         <hr/>
         <h2>Solicitud</h2>
           <label>Dependencia
             <select id="dependencia" name="dependencia" required>
-              <option>Seleccionar...</option>
+              <option value="">Seleccionar...</option>
               <option value="FCA">Facultad de Ciencias Administrativas</option>
             </select>
           </label>
           <label>Asunto
             <select id="asunto" name="asunto" required>
-              <option>Seleccionar...</option>
+              <option value="">Seleccionar...</option>
               <option value="CONS SOFTWARE">Consultor&iacute;a software</option>
               <option value="SOPORTE">Soporte</option>
               <option value="CORREO">Correo</option>
@@ -39,7 +81,7 @@
         <hr/>
         <h2>Datos del solicitante</h2>
           <label>Correo Electronico
-            <input type="text" id="correo" name="correo" >
+            <input type="email" id="correo" name="correo" required>
           </label>
           <label>Tel&eacute;fono / Extencion
             <input type="text" id="telefono" name="telefono" required>

@@ -1,0 +1,40 @@
+***************************JAVASCRIPT******************************
+
+$(document).ready(function() {
+  $("#boton_succes").click(function() {
+    if($("#dependencia").val() == "" || $("#asunto").val() == "")
+      alert("campo Vacio verificar");
+    else
+      enviarSolicitud();
+
+  });
+});
+
+function enviarSolicitud() {
+  $("#mensaje").html("");
+  $.ajax({
+    type: 'POST',
+    dataType: 'json',
+    url: 'enviarSolicitud.php',
+    async: false,
+    cache: false,
+    data: {
+       dependencia  :$("#dependencia").val().trim()
+      ,asunto       :$("#asunto").val().trim()
+      ,descripcion  :$("#descripcion").val().trim()
+      ,correo       :$("#correo").val().trim()
+      ,telefono     :$("#telefono").val().trim()
+    }
+  }).done( function (data) {
+        $("#mensaje").html($arreglo[0]);
+  });
+}
+
+***************************JAVASCRIPT******************************
+
+
+******************************HTML*********************************
+
+<!-- <span  id="boton_succes" class="button success round">Enviar</span> -->
+
+******************************HTML*********************************

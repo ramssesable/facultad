@@ -1,0 +1,50 @@
+<html>
+  <head>
+
+    <script src="../resources/js/vendor/jquery.js"></script>
+  	<script type="text/javascript">
+  	  $(document).ready(function() {
+        $("#boton").click(function() {
+          $.getJSON("prueba.php",{ },utulizarJson);
+        });
+        $("#boton2").click(function() {
+          $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            url: 'prueba.php',
+            async: true,
+            cache: false,
+            //data: { args }
+          }).done( function (data) {
+            if( data.result == 1){
+              $("#mensaje").html("");
+              $("#mensaje").html("<h1>Aqui tambien hay con que</h1><h3>"+ data.data[0].nombre + "</h3>"); 
+            }else{
+              $("#mensaje").html("");
+              $("#mensaje").html("<h1>No se encontro contenido</h1>"); 
+            }
+          });
+        });
+  	  });
+      function utulizarJson(data) {
+        if(data) {
+          $("#mensaje").html("");
+          $("#mensaje").html("<h1>Aqui hay con queso</h1>");
+          $("#receptor").val(data.data[0].nombre);
+        }else {
+          $("#mensaje").html("");
+          $("#mensaje").html("<h3>No se encontro nada</h3>");
+        }
+      }
+  	</script>
+  </head>
+  <body>
+  	<div class="row">
+  		<h2>Haciendo pruebas</h2>
+  		<input type="text" id="receptor" ><br>
+      <input type="button" id="boton" value="boton1"><br>
+      <input type="button" id="boton2" value="boton2">
+  	</div>
+    <div class="row" id="mensaje">  </div>
+  </body>
+</html>

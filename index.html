@@ -15,18 +15,19 @@
     <!--=================== Imports del Reproductor de Radio ===================-->
     <script src="mediaelement/build/jquery.js"></script>
     <script src="mediaelement/build/mediaelement-and-player.min.js"></script>
+    <script src="mediaelement/testforfiles.js"></script>
     <link rel="stylesheet" href="mediaelement/build/mediaelementplayer.min.css" />
     <!-- ================ Fin de Imports del Reproductor de Radio ==============-->
     <style type="text/css">
-      .contador {
-        position        :  absolute;
-        right           :  10px;
-        width           :  60px;
-      }
-      .espacioCompleto {
-        padding-left  :  15px;
-        padding-right :  15px;
-      }
+      .contador{
+        position:absolute;
+        right: 10px;
+	width:60px;
+        }
+      .espacioCompleto{
+          padding-left: 15px;
+          padding-right: 15px;
+        }
     </style>
   </head>
   <body>
@@ -51,7 +52,7 @@
         <section class="top-bar-section">
           <!-- Right Nav Section -->
           <ul class="right">
-            <li class="active"><a href="../">Principal</a></li>
+            <li class="active"><a href="../facultad">Principal</a></li>
             <li><a href="institucional/">Institucional</a></li>
             <li><a href="licenciaturas/">Licenciaturas</a></li>
             <li><a href="programasDeApoyo/">Programas de Apoyo</a></li>
@@ -79,7 +80,7 @@
     <aside class="left-off-canvas-menu">
       <ul class="off-canvas-list">
         <li><label>Men&uacute;</label></li>
-          <li><a href="../fca/">Principal</a></li>
+          <li><a href="../facultad">Principal</a></li>
           <li><a href="institucional/">Institucional</a></li>
           <li><a href="licenciaturas/">Licenciaturas</a></li>
           <li><a href="programasDeApoyo/">Programas de Apoyo</a></li>
@@ -108,23 +109,23 @@
 
     <div class="row darkgrey clearfix espacioCompleto">
       <ul class="example-orbit" data-orbit>
-        <!--<a href="resources/documents/pdi.pdf">
+        <a href="institucional/pdi.html">
           <li class="active">
-            <img src="resources/img/slider/pdi.jpg" alt="Plan de desarrollo institucional" />
-            <div class="orbit-caption">Plan de desarrollo institucional 2015</div>
+        <img src="resources/img/slider/pdi.jpg" alt="Plan de desarrollo institucional" />
+            <div class="orbit-caption">UABC una de las mejores universidades p&uacute;blicas del Pa&iacute;s</div>
           </li>
         </a>
-         <li>
+        <!--<li>
           <img src="resources/img/slider/f.jpg" alt="slide 1" />
           <div class="orbit-caption"> Curso ISO</div>
-        </li> -->
+        </li>   -->
         <li>
           <img src="resources/img/slider/a.jpg" alt="slide 1" />
           <div class="orbit-caption">UABC una de las mejores universidades p&uacute;blicas del Pa&iacute;s</div>
         </li>
         <li>
           <img src="resources/img/slider/b.jpg" alt="slide 2" />
-          <div class="orbit-caption">Orgullosamente cimarrón con valores!</div></li>
+          <div class="orbit-caption">Orgullosamente cimarr&oacute;n con valores!</div></li>
         <li>
           <img src="resources/img/slider/c.jpg" alt="slide 3" />
           <div class="orbit-caption">Carreras acreditadas</div>
@@ -150,7 +151,7 @@
 <!--============================== MENU ALUMNOS ================================-->
 <!--============================================================================-->
 
-<div id="menuAlumnos"></div>
+<div id="menuAlumnos"></div><!--  Esta seccion se carga con la funcion cargarMenuAlumnos que se encuentra resourses/js/funciones.js -->
 
 <!--============================================================================-->
 <!--=========================== Texto de Bienvenida ============================-->
@@ -234,58 +235,87 @@
   <div class="medium-6 columns ">
     <div class="amarisho inner-shadow show-for-medium-up">
       <h2>Anuncios</h2>
-      <p>En esta secci&oacute;n podras ver los ultimos anuncios referentes a las diferentes actividades y tramites que se realizan en esta facultad.</p><br><br>
+      <p>En esta secci&oacute;n podras ver los ultimos anuncios referentes a las diferentes actividades y tramites que se realizan en esta facultad.</p><br>
     </div><br>
-    
-  </div>
-
-    <!-- Slider de Anuncios =======================-->
-  <div class="medium-6 columns" width="1200px">
     <center>
       <ul class="example-orbit" timer-speed="5000" data-orbit>
-        <li><img src="https://dl.dropboxusercontent.com/u/86599928/formatos_ingles/portada.JPG" alt="slide2" />
-          <div align="right" class="orbit-caption">
-            <a class="button success tiny radius" href="https://dl.dropboxusercontent.com/u/86599928/formatos_ingles/Resultado%20de%20examen%2027%20de%20febrero%202015.docx">Descargar</a>
+        <li>
+   	   <img src="https://dl.dropboxusercontent.com/u/86599928/becasAlas/BotonConvocatoria_GENERAL-B%20(1).jpg" title="Beca general" alt="Beca general" />
+               <div align="right" class="orbit-caption">
+            <a class="button success tiny radius" href="http://www.fundacionuabc.org/becas.php" target="_blank">Ir a p&aacute;gina</a>
           </div>
         </li>
-        <li><img href"#" src="https://dl.dropboxusercontent.com/u/86599928/unnamed%20(1).jpg" alt="slide 1" />
+        <li>
+          <img src="https://dl.dropboxusercontent.com/u/86599928/becasAlas/BotonConvocatoria_GENERAL-A%20(1).jpg" title="Beca general" alt="Beca general" />
           <div align="right" class="orbit-caption">
-          <a class="button success tiny radius" href="https://dl.dropboxusercontent.com/u/86599928/Convocatoria-ALAS_GENERAL.pdf">Ver completo</a>
-          </div>
-        </li>		
-        <li><img src="https://dl.dropboxusercontent.com/u/86599928/Captura1.1.1.JPG" alt="slide2" />
-          <div align="right" class="orbit-caption">
-            <a class="button success tiny radius" href="https://dl.dropboxusercontent.com/u/86599928/PROMOCION%20EDUCONTA%20CURSOS-2015.docx">Descargar</a>
+            <a class="button success tiny radius" href="https://dl.dropboxusercontent.com/u/86599928/becasAlas/AT%202016-1.pdf" target="_blank">Ver Informaci&oacute;n</a>
           </div>
         </li>
-        <li><img src="https://dl.dropboxusercontent.com/u/86599928/formatos_ingles/idiomas.jpg" alt="slide 3" />
+        <li>
+          <img src="https://dl.dropboxusercontent.com/u/86599928/becasAlas/BotonConvocatoria_GENERAL-B.jpg" title="Beca general" alt="Beca general" />
           <div align="right" class="orbit-caption">
-            <a class="button success tiny radius" href="servicios/ingles.html">Ver completo</a>
+            <a class="button success tiny radius" href="http://www.fundacionuabc.org/becas.php" target="_blank">Ir a p&aacute;gina</a>
           </div>
         </li>
-        <li><img src="https://dl.dropboxusercontent.com/u/86599928/Capturasi.jpg" alt="slide 4" />
+        <li>
+            <img src="https://dl.dropboxusercontent.com/u/86599928/becasAlas/BotonConvocatoria_GENERAL-A.jpg" title="Beca general" alt="Beca general" />
           <div align="right" class="orbit-caption">
-            <a class="button success tiny radius" href="#">Ver completo</a>
-          </div>
-        </li>
-        <li><img src="https://dl.dropboxusercontent.com/u/86599928/Cursos%20Cult.png" alt="slide 5" />
-          <div align="right" class="orbit-caption">
-            <a class="button success tiny radius" href="#">Ver completo</a>
-          </div>
-        </li>
-        <li><img src="https://dl.dropboxusercontent.com/u/86599928/pdfdoc.png" alt="slide 6" />
-          <div align="right" class="orbit-caption">
-            <a class="button success tiny radius" href="https://dl.dropboxusercontent.com/u/86599928/SALONES%202015-1%20(1)%20(1).pdf">Ver completo</a>
-          </div>
-        </li>
-        <li><img href"#" src="https://dl.dropboxusercontent.com/u/86599928/Cartel1.jpg" alt="slide 7" />
-          <div align="right" class="orbit-caption">
-            <a class="button success tiny radius" src="#">Ver completo</a>
+       <a class="button success tiny radius" href="https://dl.dropboxusercontent.com/u/86599928/becasAlas/AT%202016-1.pdf" target="_blank"> Ver Informaci&oacute;n</a>
           </div>
         </li>
       </ul>
     </center>
   </div>
+
+    <!-- Slider de Anuncios =======================-->
+    <div class="medium-6 columns" width="1200px">
+      <center>
+        <ul class="example-orbit" timer-speed="5000" data-orbit>
+          <li>
+            <img src="https://dl.dropboxusercontent.com/u/86599928/formatos_ingles/portada.JPG" alt="slide2" />
+            <div align="right" class="orbit-caption">
+              <a class="button success tiny radius" href="https://dl.dropboxusercontent.com/u/86599928/formatos_ingles/Resultado%20de%20examen%2027%20de%20febrero%202015.docx">Descargar</a>
+            </div>
+          </li>		
+          <li>
+            <img src="https://dl.dropboxusercontent.com/u/86599928/Captura1.1.1.JPG" alt="slide2" />
+            <div align="right" class="orbit-caption">
+              <a class="button success tiny radius" href="https://dl.dropboxusercontent.com/u/86599928/PROMOCION%20EDUCONTA%20CURSOS-2015.docx">Descargar</a>
+            </div>
+          </li>
+          <li>
+            <img src="https://dl.dropboxusercontent.com/u/86599928/formatos_ingles/idiomas.jpg" alt="slide 3" />
+            <div align="right" class="orbit-caption">
+              <a class="button success tiny radius" href="servicios/ingles.html">Ver completo</a>
+            </div>
+          </li>
+          <li>
+            <img src="https://dl.dropboxusercontent.com/u/86599928/Capturasi.jpg" alt="slide 4" />
+            <div align="right" class="orbit-caption">
+              <a class="button success tiny radius" href="#">Ver completo</a>
+            </div>
+          </li>
+          <li>
+            <img src="https://dl.dropboxusercontent.com/u/86599928/Cursos%20Cult.png" alt="slide 5" />
+            <div align="right" class="orbit-caption">
+              <a class="button success tiny radius" href="#">Ver completo</a>
+            </div>
+          </li>
+          <li>
+            <img src="https://dl.dropboxusercontent.com/u/86599928/pdfdoc.png" alt="slide 6" />
+            <div align="right" class="orbit-caption">
+              <a class="button success tiny radius" href="https://dl.dropboxusercontent.com/u/86599928/SALONES%202015-1%20(1)%20(1).pdf">Ver completo</a>
+            </div>
+          </li>
+          <li>
+            <img href"#" src="https://dl.dropboxusercontent.com/u/86599928/Cartel1.jpg" alt="slide 7" />
+            <div align="right" class="orbit-caption">
+              <a class="button success tiny radius" src="#">Ver completo</a>
+            </div>
+          </li>
+        </ul>
+      </center>
+    </div>
 
 <hr />
 
@@ -298,16 +328,16 @@
 
     <ul class="large-block-grid-4">
       <li>
-        <h2><SMALL>Ex&aacute;menes 2014-2</SMALL></h2><img src="https://dl.dropboxusercontent.com/u/86599928/fca/img/Icons/i/examenes.jpg" />
-        <a href="https://dl.dropboxusercontent.com/u/86599928/horarios2015-1.pdf" class="success radius button expand">Entrar</a>
+        <h2><SMALL>Ex&aacute;menes 2015-1</SMALL></h2><img src="https://dl.dropboxusercontent.com/u/86599928/fca/img/Icons/i/examenes.jpg" />
+        <a href="https://dl.dropboxusercontent.com/u/86599928/CALENDARIO_DE_EXAMENES_2015-1%20(2).pdf" class="success radius button expand">Entrar</a>
       </li>
       <li>
-        <h2><SMALL>Horarios 2015-1</SMALL></h2><img src="https://dl.dropboxusercontent.com/u/86599928/fca/img/Icons/i/horarios.jpg" />
+        <h2><SMALL>Horarios 2015-2</SMALL></h2><img src="https://dl.dropboxusercontent.com/u/86599928/fca/img/Icons/i/horarios.jpg" />
         <a href="academico/estudiantes.html" class="success radius button expand">Entrar</a>
       </li>
       <li>
         <h2><SMALL>Intersemestrales</SMALL></h2><img src="https://dl.dropboxusercontent.com/u/86599928/fca/img/Icons/i/inter.jpg" />
-        <a href="https://dl.dropboxusercontent.com/u/86599928/convo%20(1)-page-001.jpg" class="success radius button expand">Entrar</a>
+        <a href="https://dl.dropboxusercontent.com/u/86599928/convo%202015-1.pdf" class="success radius button expand">Entrar</a>
       </li>
       <li>
         <h2><SMALL>Libros y Publicaciones</SMALL></h2><img src="https://dl.dropboxusercontent.com/u/86599928/fca/img/Icons/i/libros.png" />
@@ -332,7 +362,7 @@
 
 <div id="socialsbar" style="height:75px;">
   <center>
-    <h5 class="footer"><small>Copyright © 2015 Facultad de Ciencias Administrativas UABC. Todos los derechos reservados.<!-- <img class="contador" style="border: 0px solid; display: inline;" alt="contador de visitas" src="http://www.websmultimedia.com/contador-de-visitas.php?id=185858" /> --></small></h5><span data-tooltip aria-haspopup="true" class="has-tip tip-top" title="Aqui va el tip :)"><h5 class="footer"><small>Diseñado por el departamento de sistematizaci&oacute;n y desarrollo FCA.</small></h5></span>
+    <h5 class="footer"><small>Copyright © 2015 Facultad de Ciencias Administrativas UABC. Todos los derechos reservados.<img class="contador" style="border: 0px solid; display: inline;" alt="contador de visitas" src="http://www.websmultimedia.com/contador-de-visitas.php?id=185858" /></small></h5><span data-tooltip aria-haspopup="true" class="has-tip tip-top" title="Aqui va el tip :)"><h5 class="footer"><small>Diseñado por el departamento de sistematizaci&oacute;n y desarrollo FCA.</small></h5></span>
   </center>
 </div>
 </div>
@@ -352,11 +382,11 @@
    <script src="resources/js/foundation/foundation.equalizer.js"></script>
    <script src="resources/js/foundation/foundation.tooltip.js"></script>
    <script src="resources/js/foundation/foundation.joyride.js"></script>
+   <script src="resources/js/vendor/cookie.js"></script>
    <script>
     $('audio,video').mediaelementplayer();
    </script>
    <script>
-
       $(document).foundation({
         orbit: {
           animation: 'slide',
@@ -367,14 +397,12 @@
           slide_number: false,
           bullets: false
           }
-        });
-
+      });
       $(document).ready(function () {
         // Carga footer
         $("#footer").load("footer.html");
         cargarMenuAlumnos();
       });
-      
       $('a.reveal-link').trigger('click');
       $('a.close-reveal-modal').trigger('click');
     </script>
