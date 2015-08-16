@@ -6,9 +6,9 @@
   $telefono 	= $_POST['telefono'];
 
   // Debes editar las próximas dos líneas de código de acuerdo con tus preferencias
-  $email_to = "ramssesable13@gmail.com";
+  $email_to = 'ramssesable13@gmail.com';
   //$email_to = "claudia@uabc.edu.mx";
-  $email_subject = "Solicitud de servicios informáticos";
+  $email_subject = 'Solicitud de servicios informáticos';
 
   $email_message = "Detalles solicitud:\n\n";
   $email_message .= "Dependencia: " . $dependencia . "\n";
@@ -19,8 +19,9 @@
 
   // Ahora se envía el e-mail usando la función mail() de PHP
   $headers = 'From: '.$correo."\r\n".
-  'X-Mailer: PHP/' . phpversion();
-  @mail($email_to, $email_subject, utf8_decode($email_message), $headers);
+'Reply-To: '.$correo."\r\n" .
+'X-Mailer: PHP/' . phpversion();
+  mail($email_to, $email_subject, utf8_decode($email_message), $headers);
 
   echo "¡El formulario se ha enviado con éxito!";
 ?>
