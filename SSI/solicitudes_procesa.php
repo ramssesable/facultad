@@ -4,35 +4,32 @@
 
 //---------------------------------------------------------------------------------------------------------------------------------------------
 
-
-	$sql 		= 'SELECT usuario,correo,telefono,dependencia,asunto,descripcion,estatus FROM solicitudes WHERE usuario=11111';
+	$sql 		= 'SELECT usuario,correo,telefono,dependencia,asunto,descripcion,estatus FROM solicitudes WHERE usuario='.$_SESSION['usuario'];
 	$result 	= mysql_query($sql);
-	if ( !mysql_fetch_array($result) > 0)
+	$arreglo 	= mysql_fetch_array($result);
+	if ( !$arreglo > 0)
 		$arreglo_solicitudes = array("result" => 0);
 	else {
 		$arreglo_solicitudes = array("result" => 1); 
 		$data = array();
 
+		$fila = array();
+		for ($i = 0; $i <= mysql_num_fields($result)-1; $i ++) {
+			$fila[mysql_field_name($result, $i)] = $arreglo[$i];
+		}
+		array_push($data, $fila);
+
 		while($arreglo 	= mysql_fetch_array($result)) {
 			$fila = array();
-			for ($i = 1; $i <= mysql_num_fields($result); $i ++) {
-				array_push($fila, $arreglo[$i]);
+			for ($i = 0; $i <= mysql_num_fields($result)-1; $i ++) {
+				$fila[mysql_field_name($result, $i)] = $arreglo[$i];
 			}
 			array_push($data, $fila);
-			echo "$arreglo[0] $arreglo[1] $arreglo[2] $arreglo[3] $arreglo[4] $arreglo[5] $arreglo[6] <br>";
 		}
+		$arreglo_solicitudes['data'] = $data;
 	}
-		
-	/*if ($arreglo > 0) {
-
-		
-
-		//$arreglo_solicitudes=array("result" => 1,"data" => array(array("nombre" => "Ramon", "edad" => 25),array("nombre" => "Ramsses", "edad" => 23)));
-		//header('Content-Type:text/json');
-		//echo json_encode($arreglo_prueba);
-	}else {
-		echo "Le falto mas caldo";
-	}*/
 
 
+	header('Content-Type:text/json');
+	echo json_encode($arreglo_solicitudes);
 ?>

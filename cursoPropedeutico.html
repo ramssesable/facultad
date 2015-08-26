@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="resources/css/normalize.css">
     <link rel="stylesheet" href="resources/css/footer.css">
     <script src="resources/js/vendor/modernizr.js"></script>
+    <script src="resources/js/vendor/jquery.js"></script>
+    <script src="resources/js/foundation/foundation.equalizer.js"></script>
+    <script src="resources/js/foundation/foundation.js"></script>
     <script src="resources/js/footer.js"></script>
     <script src="resources/js/funciones.js"></script>
     <script src="mediaelement/build/jquery.js"></script>
@@ -41,7 +44,7 @@
           <section class="top-bar-section">
             <!-- Right Nav Section -->
             <ul class="right">
-              <li><a href="../">Principal</a></li>
+              <li><a href="../facultad/">Principal</a></li>
               <li class="active"><a href="institucional/">Institucional</a></li>
               <li><a href="licenciaturas/">Licenciaturas</a></li>
               <li><a href="programasDeApoyo/">Programas de Apoyo</a></li>
@@ -198,7 +201,7 @@
     <div class="small-12 large-6 columns">
       <center>
         <h2>Ubicaci&oacute;n de salones</h2>
-        <ul class="example-orbit" timer-speed="1000" data-orbit>
+        <ul class="example-orbit" timer-speed="5000" data-orbit>
           <li>
             <img src="https://dl.dropboxusercontent.com/u/86599928/fca/img/salones1.jpg" title="Lista de salones 1" alt="Lista de salones 1" />
             <div align="right" class="orbit-caption">
@@ -273,9 +276,9 @@ $('audio,video').mediaelementplayer();
       $(document).foundation({
         orbit: {
         animation: 'slide',
-        timer_speed: 12000,
+        timer_speed: 6000,
         pause_on_hover: false,
-        animation_speed: 500,
+        animation_speed: 1000,
         navigation_arrows: true,
         slide_number: false,
         bullets: false

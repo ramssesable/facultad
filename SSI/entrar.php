@@ -16,7 +16,7 @@
 
 	if ($arreglo > 0) {
 		$_SESSION['usuario'] = $arreglo[0];
-		$_SESSION['nombre'] = "'".$arreglo[1]."'";
+		$_SESSION['nombre'] = $arreglo[1];
 		$result = array("result" => 1);
 		header('Content-Type:text/json');
 		echo json_encode($result);

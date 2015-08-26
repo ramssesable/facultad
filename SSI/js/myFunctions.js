@@ -1,3 +1,6 @@
+$(document).ready(function() {
+  $("#cerrarSession").click(cerrarSession);
+});
 function verificarSession() {
   $.ajax({
   	type: 'POST'
@@ -7,7 +10,9 @@ function verificarSession() {
     ,cache: false
     //,data: {args}
   }).done( function (data) {
-    if( data.result == 0 ) {
+    if( data.result == 1 ) {
+      $("#usuarioNombre").html(data.usuario);
+    }else {
       document.location.href="../ssi";
     }
   });

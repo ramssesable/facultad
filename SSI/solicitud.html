@@ -53,6 +53,41 @@
     </script>
   </head>
   <body>
+    <div class="sticky">
+      <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large,small,medium">
+         <ul class="title-area">
+            <li class="name">
+              <h1><a href="main.html" id="usuarioNombre"></a></h1>
+            </li>
+             <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+          </ul>
+
+          <section class="top-bar-section">
+            <!-- Right Nav Section -->
+            <ul class="right">
+              <li><a href="main.html">Principal</a></li>
+              <li><a href="solicitud.html">Ingresar solicitud</a></li>
+              <li><a href="solicitudes.html">Ver solicitudes</a></li>
+            </ul>
+
+            <!-- Left Nav Section -->
+            <ul class="left">
+              <li><a class="alert button" id="cerrarSession">Cerrar sesión</a></li>
+            </ul>
+          </section>
+      </nav>
+    </div>
+
+    <div>
+      <div class="small-12 columns amarisho inner-shadow">
+        <center>
+          <h2>Universidad Aut&oacute;noma de Baja California</h2>
+          <h2><small>Solicitud de Sistemas Inform&aacute;ticos</small></h2>
+        </center>
+      </div>
+    </div>
+
     <div id="msj"></div><h2><div id="mensaje"></div></h2>
     <div clasS="row"> <!--  Inicia pagina  -->
       <form id="forma" onsubmit="return enviarSolicitud()">
@@ -90,5 +125,11 @@
           <input type="reset" class="button alert round" value="Limpiar campos">
       </form>
     </div> <!-- Termina página -->
+
+    <script src="../resources/js/foundation/foundation.js"></script>
+    <script src="../resources/js/foundation/foundation.topbar.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
   </body>
 </html>
