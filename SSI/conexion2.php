@@ -5,5 +5,4 @@
 		echo "No se pudo establecer conexion...";
 	}else
 		mysql_select_db("ssi",$conect);
-		/*fcaMXL13*/
 ?>

@@ -1,60 +1,64 @@
-<!DOCTYPE html>
 <html>
   <head>
   	<meta charset="UTF-8">
-  	<title>Solicitud de servicios informáticos</title>
-    <meta name="description" content="Página principal - Solicitud de servicios informáticos Facultad de Ciencias Administrativas"/>
+    <title>Solicitudes - SSI</title>
+    <meta name="description" content="Solicitud de servicios informáticos Facultad de Ciencias Administrativas"/>
     <meta name="author" content="Martin Ramsses Gomez Rodriguez"/>
     <link rel="stylesheet" href="../resources/css/foundation.css" />
     <link rel="stylesheet" href="../resources/css/foundation.min.css" />
-  	<link rel="stylesheet" href="../resources/css/normalize.css" />
+    <link rel="stylesheet" href="../resources/css/normalize.css" />
     <script src="../resources/js/vendor/jquery.js"></script>
-    <script src="../resources/js/vendor/jquery.mask.js"></script>
-    <script src="../resources/js/vendor/jquery.mask.min.js"></script>
     <script src="js/myFunctions.js"></script>
-    <script type="text/javascript" languaje="javascript">
-    	$(document).ready(function() {
-    		verificarSession();
-        buscarSolicitudes();
-    	});
+    <script type="text/javascript">
+      $(document).ready(function() {
+        verificarSession();
+        //buscarSolicitudes();
+      });
       function buscarSolicitudes() {
         $.ajax({
           type: 'POST',
           dataType: 'json',
           url: 'Solicitudes_procesa.php',
-          async: false,
+          async: true,
           cache: false,
           //data: { args }
         }).done( function (data) {
           if ( data.result == 1 ) {
+            var $_encabezado  = $("<thead/>");
+            var $_renglon     = $("<tr/>");
+            //var $_temp        = $("<th/>").html("estatus").appendTo($_renglon);
+            //var $_temp        = $("<th/>").html("usuario").appendTo($_renglon);
+            //var $_temp        = $("<th/>").html("correo").appendTo($_renglon);
+            var $_temp        = $("<th/>").html("telefono").appendTo($_renglon);
+            var $_temp        = $("<th/>").html("dependencia").appendTo($_renglon);
+            var $_temp        = $("<th/>").html("asunto").appendTo($_renglon);
+            var $_temp        = $("<th/>").html("descripcion").attr("colspan","3").appendTo($_renglon);
+            $_renglon.appendTo($_encabezado);
+            $_encabezado.appendTo("#tablaSolicitudes");
 
+            var $_cuerpo     = $("<tbody/>");
             for ( $i = 0; $i < data.data.length; $i++) {
               if ( data.data[$i].estatus == 0 )
-                var $_renglon = $("<div/>").addClass("row panel texto").css("background-color","#FFF281");
+                var $_renglon = $("<tr/>").css("background-color","#FFF281");
               else if ( data.data[$i].estatus == 1 )
-                var $_renglon = $("<div/>").addClass("row panel texto").css("background-color","#88FF66");
-              var $_temp    = $("<div/>").addClass("small-4 medium-2 columns").html(data.data[$i].telefono).appendTo($_renglon);
-              var $_temp    = $("<div/>").addClass("small-4 medium-2 columns").html(data.data[$i].dependencia).appendTo($_renglon);
-              var $_temp    = $("<div/>").addClass("small-4 medium-2 columns").html(data.data[$i].asunto).appendTo($_renglon);
-              var $_temp    = $("<div/>").addClass("small-12 medium-6 columns").html(data.data[$i].asunto).appendTo($_renglon);
-              $_renglon.appendTo("#tablaSolicitudes");
-
+                var $_renglon = $("<tr/>").css("background-color","#88FF66");
+              //var $_temp    = $("<td/>").html(data.data[$i].estatus).appendTo($_renglon);
+              //var $_temp    = $("<td/>").html(data.data[$i].usuario).appendTo($_renglon);
+              //var $_temp    = $("<td/>").html(data.data[$i].correo).appendTo($_renglon);
+              var $_temp    = $("<td/>").html(data.data[$i].telefono).appendTo($_renglon);
+              var $_temp    = $("<td/>").html(data.data[$i].dependencia).appendTo($_renglon);
+              var $_temp    = $("<td/>").html(data.data[$i].asunto).appendTo($_renglon);
+              var $_temp    = $("<td/>").html(data.data[$i].descripcion).attr("colspan","3").appendTo($_renglon);
+              $_renglon.appendTo($_cuerpo);
+              
             }
+            $_cuerpo.appendTo("#tablaSolicitudes");
           }else {
-            $("#tablaSolicitudes").html("");
-            $("#tablaSolicitudes").html("<legend>No se encontro informaci&oacute;n</legend>");
+            $("#mensaje").html("No se encontro informaci&oacute;n");
           }
         });
       }
     </script>
-    <style type="text/css">
-      fieldset {
-        border : none;
-      }
-      .texto {
-        font-weight : bold;
-      }
-    </style>
   </head>
   <body>
     <div class="row">
@@ -83,7 +87,7 @@
             </section>
         </nav>
       </div>
-
+      
       <div>
         <div class="small-12 columns amarisho inner-shadow">
           <center>
@@ -92,19 +96,12 @@
           </center>
         </div>
       </div>
-      <hr/>
-      <h3>Solicitudes personales</h3>
-      <fieldset id="tablaSolicitudes">
-        <div class="row panel texto"> 
-          <div class="small-4 medium-2 columns">Tel&eacute;fono</div>
-          <div class="small-4 medium-2 columns">Dependencia</div>
-          <div class="small-4 medium-2 columns">Asunto</div>
-          <div class="small-12 medium-6 columns">Descripcion</div>
-        </div> <!-- Termina página -->
 
-      </fieldset>
-
+      <div class="row"> <!--  Inicia pagina  -->
+        <table id="tablaSolicitudes"></table>
+      </div> <!-- Termina página -->
     </div>
+
     <script src="../resources/js/foundation/foundation.js"></script>
     <script src="../resources/js/foundation/foundation.topbar.js"></script>
     <script>

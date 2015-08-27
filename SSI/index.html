@@ -51,38 +51,39 @@
   	<style type="text/css"></style>
   </head>
   <body>
-    <div class="sticky">
-      <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large,small,medium">
-        <ul class="title-area">
-          <li class="name">
-            <h1><a href="../ssi">Login</a></h1>
-          </li>
-           <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-        </ul>
-      </nav>
-    </div>
-    <div>
-      <div class="small-12 columns amarisho inner-shadow">
-        <center>
-          <h2>Universidad Aut&oacute;noma de Baja California</h2>
-          <h2><small>Solicitud de Sistemas Inform&aacute;ticos</small></h2>
-        </center>
+    <div class="row">
+      <div class="sticky">
+        <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: all">
+          <ul class="title-area">
+            <li class="name">
+              <h1><a href="../ssi">Login</a></h1>
+            </li>
+             <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+          </ul>
+        </nav>
       </div>
-    </div>
-
-    <div class="row"></div><br><bR>
-  	<form id="login" method="POST" onsubmit="return buscarEmpleado()" >
-      <div class="row">
-        <div class="small-1 columns">&nbsp;</div>
-        <div class="small-10 medium-6 columns medium-centered panel">
-          Usario: <input type="text" id="clave" name="clave" placeholder="Proporcione n&uacute;mero de empleado" required>
-          <input type="submit" class="button success" value="Entrar">
+      <div>
+        <div class="small-12 columns amarisho inner-shadow">
+          <center>
+            <h2>Universidad Aut&oacute;noma de Baja California</h2>
+            <h2><small>Solicitud de Sistemas Inform&aacute;ticos</small></h2>
+          </center>
         </div>
-        <div class="small-1 columns"></div>
       </div>
-  	</form>
 
+      <div class="row"></div><br><bR>
+    	<form id="login" method="POST" onsubmit="return buscarEmpleado()" >
+        <div class="row">
+          <div class="small-1 columns">&nbsp;</div>
+          <div class="small-10 medium-6 columns medium-centered panel">
+            Usario: <input type="text" id="clave" name="clave" placeholder="Proporcione n&uacute;mero de empleado" required>
+            <input type="submit" class="button success" value="Entrar">
+          </div>
+          <div class="small-1 columns"></div>
+        </div>
+    	</form>
+    </div>
     <script src="../resources/js/foundation/foundation.js"></script>
     <script src="../resources/js/foundation/foundation.topbar.js"></script>
     <script>

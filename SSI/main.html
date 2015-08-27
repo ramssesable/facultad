@@ -17,43 +17,55 @@
     		verificarSession();
     	});
     </script>
-    <style type="text/css">  </style>
+    <style type="text/css">
+      fieldset {
+        border: none;
+      }
+    </style>
   </head>
   <body>
-    <div class="sticky">
-      <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large,small,medium">
-         <ul class="title-area">
-            <li class="name">
-              <h1><a href="main.html" id="usuarioNombre"></a></h1>
-            </li>
-             <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-          </ul>
-
-          <section class="top-bar-section">
-            <!-- Right Nav Section -->
-            <ul class="right">
-              <li><a href="main.html">Principal</a></li>
-              <li><a href="solicitud.html">Ingresar solicitud</a></li>
-              <li><a href="solicitudes.html">Ver solicitudes</a></li>
+    <div class="row">
+      <div class="sticky">
+        <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: all">
+           <ul class="title-area">
+              <li class="name">
+                <h1><a href="main.html" id="usuarioNombre"></a></h1>
+              </li>
+               <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+              <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
             </ul>
 
-            <!-- Left Nav Section -->
-            <ul class="left">
-              <li><a class="alert button" id="cerrarSession">Cerrar sesión</a></li>
-            </ul>
-          </section>
-      </nav>
-    </div>
-    <div>
-      <div class="small-12 columns amarisho inner-shadow">
-        <center>
-          <h2>Universidad Aut&oacute;noma de Baja California</h2>
-          <h2><small>Solicitud de Sistemas Inform&aacute;ticos</small></h2>
-        </center>
+            <section class="top-bar-section">
+              <!-- Right Nav Section -->
+              <ul class="right">
+                <li><a href="main.html">Principal</a></li>
+                <li><a href="solicitud.html">Ingresar solicitud</a></li>
+                <li><a href="solicitudes.html">Ver solicitudes</a></li>
+              </ul>
+
+              <!-- Left Nav Section -->
+              <ul class="left">
+                <li><a class="alert button" id="cerrarSession">Cerrar sesión</a></li>
+              </ul>
+            </section>
+        </nav>
       </div>
-    </div>
 
+      <div>
+        <div class="small-12 columns amarisho inner-shadow">
+          <center>
+            <h2>Universidad Aut&oacute;noma de Baja California</h2>
+            <h2><small>Solicitud de Sistemas Inform&aacute;ticos</small></h2>
+          </center>
+        </div>
+      </div>
+      <hr/>
+      <fieldset>
+        <div class="row panel">
+          <p><center>En esta secci&oacute;n se podran hacer o consultar solicitudes con tema de Inform&aacute;tica en la <strong>Facultad de ciencias administrativas</strong><center></p>
+        </div>
+      </fieldset>
+    </div>
     <script src="../resources/js/foundation/foundation.js"></script>
     <script src="../resources/js/foundation/foundation.topbar.js"></script>
     <script>
