@@ -47,8 +47,28 @@
             alert("Se ha perdido su session\r\n\r\nEsta siendo redirigido al login");
             document.location.href="../ssi";
           }else {
-            alert("Hubo algun problema");
+            alert("Hubo algún problema");
           }
+        });
+      }
+
+      function enviarEmail() {
+        $("#mensaje").html("");
+        $.ajax({
+          type: 'POST'
+          ,dataType: 'json'
+          ,url: 'facultaddecienciasadministrativas.com/iatics/enviarEmail.php'
+          ,async: false
+          ,cache: false
+          ,data: {
+             dependencia  :$("#dependencia").val().trim()
+            ,asunto       :$("#asunto").val().trim()
+            ,descripcion  :$("#descripcion").val().trim()
+            ,correo       :$("#correo").val().trim()
+            ,telefono     :$("#telefono").val().trim()
+          }
+        }).done( function (data) {
+          enviarSolicitud();
         });
 
         return false;
@@ -97,7 +117,7 @@
       <div clasS="panel"> <!--  Inicia pagina  -->
         <fieldset>
           <h2>Datos de solicitud</h2>
-          <form id="forma" onsubmit="return enviarSolicitud()">
+          <form id="forma" onsubmit="return enviarEmail()">
               <label>Dependencia
                 <select id="dependencia" name="dependencia" required>
                   <option value="">Seleccionar...</option>

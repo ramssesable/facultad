@@ -13,6 +13,7 @@
 	$return 	= mysql_query($query);
 	$arreglo 	= mysql_fetch_array($return);
 
+	mysql_close($conect);
 
 	if ($arreglo > 0) {
 		$_SESSION['usuario'] = $arreglo[0];

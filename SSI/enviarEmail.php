@@ -10,18 +10,17 @@
   //$email_to = "claudia@uabc.edu.mx";
   $email_subject = "Solicitud de servicios informáticos";
 
-  $email_message = "Detalles solicitud:\n\n";
-  $email_message .= "Dependencia: " . $dependencia . "\n";
-  $email_message .= "Asunto: " . $asunto . "\n";
-  $email_message .= "descripción: " . $descripcion . "\n";
-  $email_message .= "telefono / Extención: " . $telefono . "\n\n";
+  $email_message = "Detalles solicitud:\r\n\r\n";
+  $email_message .= "Dependencia: " . $dependencia . "\r\n";
+  $email_message .= "Asunto: " . $asunto . "\r\n";
+  $email_message .= "descripción: " . $descripcion . "\r\n";
+  $email_message .= "telefono / Extención: " . $telefono . "\r\n\r\n";
 
 
   // Ahora se envía el e-mail usando la función mail() de PHP
   $headers = 'From: '.$correo."\r\n".
   'Reply-To: '.$correo."\r\n".
   'X-Mailer: PHP/' . phpversion();
-  @mail($email_to, $email_subject, utf8_decode($email_message), $headers);
-
-  echo "¡El formulario se ha enviado con éxito!";
+  mail($email_to, $email_subject, utf8_decode($email_message), $headers);
+  exit;
 ?>
