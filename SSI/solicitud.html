@@ -41,7 +41,7 @@
           }
         }).done( function (data) {
           if( data.result == 1 ) {
-            alert("Su solicitud ha sido enviada");
+            alert("Su solicitud ha sido enviada!\r\n\r\nSu solicitud sera atendida en los proximos 2 dias");
             document.location.href="main.html";
           }else if ( data.result == 0 ) {
             alert("Se ha perdido su session\r\n\r\nEsta siendo redirigido al login");
@@ -57,7 +57,7 @@
         $.ajax({
           type: 'POST'
           ,dataType: 'json'
-          ,url: 'facultaddecienciasadministrativas.com/iatics/enviarEmail.php'
+          ,url: 'http://www.facultaddecienciasadministrativas.com/iatics/enviarEmail.php'
           ,async: false
           ,cache: false
           ,data: {
@@ -67,9 +67,9 @@
             ,correo       :$("#correo").val().trim()
             ,telefono     :$("#telefono").val().trim()
           }
-        }).done( function (data) {
-          enviarSolicitud();
         });
+
+        enviarSolicitud();
 
         return false;
       }

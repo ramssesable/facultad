@@ -25,6 +25,7 @@
         (".$_SESSION['usuario'].",".$correo.",".$telefono.",".$dependencia.",".$asunto.",".$descripcion.",0)";
     
       mysql_query($query) or die(mysql_error());
+      mysql_close($conect);
 
       $msj = array( "result" => 1 );
     }else {

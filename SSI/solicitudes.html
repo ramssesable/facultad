@@ -30,13 +30,14 @@
 
             for ( $i = 0; $i < data.data.length; $i++) {
               if ( data.data[$i].estatus == 0 )
-                var $_renglon = $("<div/>").addClass("row panel texto").css("background-color","#FFF281");
+                var $_renglon = $("<div/>").addClass("row panel texto chico").css("background-color","#FFF281");
               else if ( data.data[$i].estatus == 1 )
-                var $_renglon = $("<div/>").addClass("row panel texto").css("background-color","#88FF66");
-              var $_temp    = $("<div/>").addClass("small-4 medium-2 columns").html(data.data[$i].telefono).appendTo($_renglon);
-              var $_temp    = $("<div/>").addClass("small-4 medium-2 columns").html(data.data[$i].dependencia).appendTo($_renglon);
-              var $_temp    = $("<div/>").addClass("small-4 medium-2 columns").html(data.data[$i].asunto).appendTo($_renglon);
-              var $_temp    = $("<div/>").addClass("small-12 medium-6 columns").html(data.data[$i].asunto).appendTo($_renglon);
+                var $_renglon = $("<div/>").addClass("row panel texto chico").css("background-color","#88FF66");
+              var $_temp    = $("<div/>").addClass("small-3 medium-2 columns").html(data.data[$i].telefono).appendTo($_renglon);
+              var $_temp    = $("<div/>").addClass("small-3 medium-2 columns").html(data.data[$i].dependencia).appendTo($_renglon);
+              var $_temp    = $("<div/>").addClass("small-3 medium-2 columns").html(data.data[$i].asunto).appendTo($_renglon);
+              var $_temp    = $("<div/>").addClass("small-3 medium-2 columns").html(data.data[$i].fecha_solicitud).appendTo($_renglon);
+              var $_temp    = $("<div/>").addClass("small-12 medium-4 columns").html(data.data[$i].descripcion).appendTo($_renglon);
               $_renglon.appendTo("#tablaSolicitudes");
 
             }
@@ -53,6 +54,9 @@
       }
       .texto {
         font-weight : bold;
+      }
+      .texto.chico {
+        font-size: 10pt;
       }
     </style>
   </head>
@@ -96,10 +100,11 @@
       <h3>Solicitudes personales</h3>
       <fieldset id="tablaSolicitudes">
         <div class="row panel texto"> 
-          <div class="small-4 medium-2 columns">Tel&eacute;fono</div>
-          <div class="small-4 medium-2 columns">Dependencia</div>
-          <div class="small-4 medium-2 columns">Asunto</div>
-          <div class="small-12 medium-6 columns">Descripcion</div>
+          <div class="small-3 medium-2 columns">Tel&eacute;fono</div>
+          <div class="small-3 medium-2 columns">Dependencia</div>
+          <div class="small-3 medium-2 columns">Asunto</div>
+          <div class="small-3 medium-2 columns">fecha</div>
+          <div class="medium-4 show-for-medium-up columns">Descripcion</div>
         </div> <!-- Termina página -->
 
       </fieldset>

@@ -12,6 +12,7 @@ function verificarSession() {
   }).done( function (data) {
     if( data.result == 1 ) {
       $("#usuarioNombre").html(data.usuario);
+      //$("#admin").html("<a href='#'>administrador</a><ul><li>Solicitudes</li></ul>");
     }else {
       document.location.href="../ssi";
     }

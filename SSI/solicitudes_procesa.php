@@ -4,9 +4,10 @@
 
 //---------------------------------------------------------------------------------------------------------------------------------------------
 
-	$sql 		= 'SELECT usuario,correo,telefono,dependencia,asunto,descripcion,estatus FROM solicitudes WHERE usuario='.$_SESSION['usuario'];
+	$sql 		= 'SELECT usuario,correo,telefono,dependencia,asunto,descripcion,estatus,fecha_solicitud FROM solicitudes WHERE usuario='.$_SESSION['usuario'];
 	$result 	= mysql_query($sql);
 	$arreglo 	= mysql_fetch_array($result);
+	mysql_close($conect);
 	if ( !$arreglo > 0)
 		$arreglo_solicitudes = array("result" => 0);
 	else {
